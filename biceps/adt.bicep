@@ -18,5 +18,8 @@ resource roleAssignment 'Microsoft.Authorization/roleAssignments@2021-04-01-prev
 resource AzureDigitalStation 'Microsoft.DigitalTwins/digitalTwinsInstances@2022-10-31' = {
   name: 'JerricoServiceStationAdt'
   location: location
-  identity: roleAssignment
+  identity: {
+    type: 'UserAssigned'
+    userAssignedIdentities: roleAssignment
+  }
 }
