@@ -7,19 +7,16 @@ param principalId string
 
 var roleAssignmentName= guid(principalId, roleDefinitionID, resourceGroup().id)
 
+resource ServiceStationAdt 'Microsoft.DigitalTwins/digitalTwinsInstances@2022-10-31' = {
+  name: 'JerricoServiceStationAdt'
+  location: location
+}
+
 resource roleAssignment 'Microsoft.Authorization/roleAssignments@2021-04-01-preview' = {
   name: roleAssignmentName
+  scope: ServiceStationAdt
   properties: {
     roleDefinitionId: resourceId('Microsoft.Authorization/roleDefinitions', roleDefinitionID)
     principalId: principalId
-  }
-}
-
-resource AzureDigitalStation 'Microsoft.DigitalTwins/digitalTwinsInstances@2022-10-31' = {
-  name: 'JerricoServiceStationAdt'
-  location: location
-  identity: {
-    type: 'UserAssigned'
-    userAssignedIdentities: roleAssignment
   }
 }
