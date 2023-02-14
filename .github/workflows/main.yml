@@ -19,4 +19,5 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
+        parameters: principalId=${{ secrets.AZURE_PRINCIPAL_ID }}
         template: ./biceps/adt.bicep
