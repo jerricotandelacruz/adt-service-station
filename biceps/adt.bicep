@@ -12,7 +12,7 @@ resource ServiceStationAdt 'Microsoft.DigitalTwins/digitalTwinsInstances@2022-10
   location: location
 }
 
-resource roleAssignment 'Microsoft.Authorization/roleAssignments@2021-04-01-preview' = {
+resource roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
   name: roleAssignmentName
   scope: ServiceStationAdt
   properties: {
