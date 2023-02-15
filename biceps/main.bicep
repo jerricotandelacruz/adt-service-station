@@ -41,7 +41,7 @@ resource ttmStorageAccountBlobService 'Microsoft.Storage/storageAccounts/blobSer
 }
 
 resource ttmStorageAccountContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2022-09-01' = {
-  name: 'default'
+  name: 'container'
   parent: ttmStorageAccountBlobService
 }
 
@@ -51,21 +51,23 @@ param principalId string
 param azureDigitalTwinsDataOwnerRoleDefinitionId string = 'bcd981a7-7f74-457b-83e1-cceb9e632ffe'
 
 resource ttmRoleAssignmentDigitalTwins 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  name: guid(principalId, azureDigitalTwinsDataOwnerRoleDefinitionId, resourceGroup().id)
+  name: guid(resourceGroup().id, principalId, azureDigitalTwinsDataOwnerRoleDefinitionId)
   scope: ttmDigitalTwins
   properties: {
     roleDefinitionId: resourceId('Microsoft.Authorization/roleDefinitions', azureDigitalTwinsDataOwnerRoleDefinitionId)
     principalId: principalId
+    principalType: 'Group'
   }
 }
 
 param storageBlobDataOwnerRoleDefinitionId string = 'b7e6dc6d-f1e8-4753-8033-0f276bb0955b'
 
 resource ttmRoleAssignmentStorageAccount 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  name: guid(principalId, storageBlobDataOwnerRoleDefinitionId, resourceGroup().id)
+  name: guid(resourceGroup().id, principalId, storageBlobDataOwnerRoleDefinitionId)
   scope: ttmStorageAccount
   properties: {
     roleDefinitionId: resourceId('Microsoft.Authorization/roleDefinitions', storageBlobDataOwnerRoleDefinitionId)
     principalId: principalId
+    principalType: 'Group'
   }
 }
