@@ -6,8 +6,9 @@ resource ttmDigitalTwins 'Microsoft.DigitalTwins/digitalTwinsInstances@2022-10-3
   location: location
 }
 
+param storageAccountName string = 'TtmStorageAccount'
 resource ttmStorageAccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
-  name: 'TtmStorageAccount'
+  name: toLower(storageAccountName)
   location: location
   kind: 'StorageV2'
   sku: {
