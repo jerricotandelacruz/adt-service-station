@@ -61,8 +61,9 @@ resource ttmRoleAssignmentDigitalTwins 'Microsoft.Authorization/roleAssignments@
 
 param storageBlobDataOwnerRoleDefinitionId string = 'b7e6dc6d-f1e8-4753-8033-0f276bb0955b'
 
-resource ttmRoleAssignmentStorageAccount 'Microsoft.Authorization/roleAssignments@2020-10-01-preview' = {
+resource ttmRoleAssignmentStorageAccount 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
   name: guid(principalId, storageBlobDataOwnerRoleDefinitionId, resourceGroup().id)
+  scope: ttmStorageAccount
   properties: {
     roleDefinitionId: resourceId('Microsoft.Authorization/roleDefinitions', storageBlobDataOwnerRoleDefinitionId)
     principalId: principalId

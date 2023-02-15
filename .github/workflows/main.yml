@@ -1,7 +1,7 @@
 on: [push]
-name: Azure ARM
+name: Azure Bicep
 jobs:
-  deploy-azure-digital-twins:
+  deploy-bicep-template:
     runs-on: ubuntu-latest
     steps:
 
