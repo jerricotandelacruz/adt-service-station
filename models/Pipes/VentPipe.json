@@ -1,0 +1,7 @@
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:tothemoon:VentPipe;1",
+  "@type": "Interface",
+  "displayName": "Vent Pipe",
+  "extends": "dtmi:tothemoon:Pipe;1"
+}

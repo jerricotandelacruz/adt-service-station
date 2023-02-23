@@ -1,0 +1,43 @@
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:tothemoon:Tank;1",
+  "@type": "Interface",
+  "displayName": "Tank",
+  "contents": [
+    {
+      "@type": "Property",
+      "name": "fillLevel",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "name": "waterLevel",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "name": "temperature",
+      "schema": "double"
+    },
+    {
+      "@type": "Property",
+      "name": "pressureLevel",
+      "schema": "double"
+    },
+    {
+      "@type": "Relationship",
+      "name": "rel_has_product_pipe",
+      "target": "dtmi:tothemoon:ProductPipe;1"
+    },
+    {
+      "@type": "Relationship",
+      "name": "rel_has_fill_pipe",
+      "target": "dtmi:tothemoon:FillPipe;1"
+    },
+    {
+      "@type": "Relationship",
+      "name": "rel_has_vent_pipe",
+      "target": "dtmi:tothemoon:VentPipe;1"
+    }
+  ]
+}

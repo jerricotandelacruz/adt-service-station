@@ -1,0 +1,35 @@
+{
+    "@context": "dtmi:dtdl:context;2",
+    "@id": "dtmi:tothemoon:ProductPipe;1",
+    "@type": "Interface",
+    "displayName": "Product Pipe",
+    "extends": "dtmi:tothemoon:Pipe;1",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "lastLeakTest",
+        "schema": "dateTime"
+      },
+      {
+        "@type": "Property",
+        "name": "leakTest",
+        "schema": {
+          "@type": "Enum",
+          "valueSchema": "integer",
+          "enumValues": [
+            {
+              "name": "success",
+              "displayName": "Success",
+              "enumValue": 1
+            },
+            {
+              "name": "failed",
+              "displayName": "Failed",
+              "enumValue": 2
+            }
+          ]
+        }
+      }
+    ]
+}
+  

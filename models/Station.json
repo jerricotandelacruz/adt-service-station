@@ -1,0 +1,13 @@
+{
+  "@context": "dtmi:dtdl:context;2",
+  "@id": "dtmi:tothemoon:Station;1",
+  "@type": "Interface",
+  "displayName": "Station",
+  "contents": [
+    {
+      "@type": "Relationship",
+      "name": "rel_has_tanks",
+      "target": "dtmi:tothemoon:Tank;1"
+    }
+  ]
+}
