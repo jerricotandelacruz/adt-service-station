@@ -1,17 +1,9 @@
+param laManageIdentityName string = 'ADTPodTestingMI'
+
 @description('Specifies the location for resources.')
 param location string = 'southeastasia'
 
-
-// AZURE DIGITAL TWINS
-param digitalTwinsName string = 'TtmDigitalTwins'
-
-resource digitalTwins 'Microsoft.DigitalTwins/digitalTwinsInstances@2022-10-31' = {
-  name: digitalTwinsName
-  location: location
-}
-
-// STORAGE ACCOUNT FOR AZURE DIGITAL TWINS 3D SCENES
-param storageAccountName string = 'TtmStorageAccount'
+param storageAccountName string = 'adtpocstorageaccount'
 
 @allowed([
   'Premium_LRS'
@@ -35,6 +27,29 @@ param sku string = 'Standard_RAGRS'
 param kind string = 'StorageV2'
 
 param containerName string = 'ttmdigitaltwinscontainer'
+
+param digitalTwinsName string = 'TtmDigitalTwins'
+
+param project string = 'digitaltwins'
+
+param by string = 'jerrico'
+
+// RESOURCES
+resource LAManageIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2018-11-30' = {
+  name: laManageIdentityName
+  location: location
+}
+
+resource digitalTwins 'Microsoft.DigitalTwins/digitalTwinsInstances@2022-10-31' = {
+  name: digitalTwinsName
+  location: location
+  identity: {
+    type: 'UserAssigned'
+    userAssignedIdentities: {
+      '${LAManageIdentity.id}' : {}
+    }
+  }
+}
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
   name: toLower(storageAccountName)
@@ -74,38 +89,36 @@ resource storageAccountContainer 'Microsoft.Storage/storageAccounts/blobServices
   parent: storageAccountBlobService
 }
 
-// ROLE ASSIGNMENTS FOR ADT AND SA
-param principalId string
-
-@allowed([
-  'Device'
-  'ForeignGroup'
-  'Group'
-  'ServicePrincipal'
-  'User'
-])
-param principalType string = 'Group'
-
-var azureDigitalTwinsDataOwnerRoleDefinitionId = 'bcd981a7-7f74-457b-83e1-cceb9e632ffe'
-
-resource roleAssignmentDigitalTwins 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  name: guid(resourceGroup().id, principalId, azureDigitalTwinsDataOwnerRoleDefinitionId)
-  scope: digitalTwins
+// RESOURCE TAGS
+resource LAManageIdentityTags 'Microsoft.Resources/tags@2022-09-01' = {
+  name:  'default'
+  scope: LAManageIdentity
   properties: {
-    roleDefinitionId: resourceId('Microsoft.Authorization/roleDefinitions', azureDigitalTwinsDataOwnerRoleDefinitionId)
-    principalId: principalId
-    principalType: principalType
+    tags: {
+      project: project
+      by: 'jerrico,winalyn'
+    }
   }
 }
 
-var storageBlobDataOwnerRoleDefinitionId = 'b7e6dc6d-f1e8-4753-8033-0f276bb0955b'
-
-resource roleAssignmentStorageAccount 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  name: guid(resourceGroup().id, principalId, storageBlobDataOwnerRoleDefinitionId)
+resource storageAccountTags 'Microsoft.Resources/tags@2022-09-01' = {
+  name:  'default'
   scope: storageAccount
   properties: {
-    roleDefinitionId: resourceId('Microsoft.Authorization/roleDefinitions', storageBlobDataOwnerRoleDefinitionId)
-    principalId: principalId
-    principalType: principalType
+    tags: {
+      project: project
+      by: 'jerrico,winalyn'
+    }
+  }
+}
+
+resource digitalTwinsTags 'Microsoft.Resources/tags@2022-09-01' = {
+  name:  'default'
+  scope: digitalTwins
+  properties: {
+    tags: {
+      project: project
+      by: by
+    }
   }
 }

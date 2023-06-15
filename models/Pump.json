@@ -1,0 +1,23 @@
+{
+    "@context": "dtmi:dtdl:context;2",
+    "@id": "dtmi:tothemoon:Pump;1",
+    "@type": "Interface",
+    "displayName": "Pump",
+    "contents": [
+      {
+        "@type": "Property",
+        "name": "totalSales",
+        "schema": "double"
+      },
+      {
+        "@type": "Property",
+        "name": "salesVolume",
+        "schema": "double"
+      },
+      {
+        "@type": "Property",
+        "name": "lastReset",
+        "schema": "dateTime"
+      }
+    ]
+  }

@@ -1,0 +1,822 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/microsoft/iot-cardboard-js/main/schemas/3DScenesConfiguration/v1.0.0/3DScenesConfiguration.schema.json",
+    "title": "I3DScenesConfig",
+    "description": "A vocabulary to annotate and validate the JSON representation of 3D scene configuration data",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "$schema": {
+            "type": "string"
+        },
+        "configuration": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "3D scene configuration data",
+            "properties": {
+                "scenes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/IScene"
+                    }
+                },
+                "behaviors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/IBehavior"
+                    }
+                },
+                "layers": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ILayer"
+                    }
+                }
+            },
+            "required": ["scenes", "behaviors", "layers"]
+        }
+    },
+    "required": ["$schema", "configuration"],
+    "$defs": {
+        "IScene": {
+            "type": "object",
+            "description": "A scene is a single view that can be rendered from 3D assets",
+            "additionalProperties": false,
+            "properties": {
+                "assets": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/IAsset"
+                    }
+                },
+                "behaviorIDs": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string",
+                        "description": "A reference to a behavior present in this scene"
+                    }
+                },
+                "elements": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/IElement"
+                    }
+                },
+                "id": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "latitude": {
+                    "type": "number"
+                },
+                "longitude": {
+                    "type": "number"
+                },
+                "pollingConfiguration": {
+                    "$ref": "#/$defs/IPollingConfiguration"
+                }
+            },
+            "required": [
+                "id",
+                "displayName",
+                "elements",
+                "behaviorIDs",
+                "assets"
+            ]
+        },
+        "IElement": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/ITwinToObjectMapping"
+                },
+                {
+                    "$ref": "#/$defs/ICustomProperty"
+                }
+            ]
+        },
+        "IAsset": {
+            "description": "A 3D asset used to create the scene",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "extensionProperties": {
+                    "$ref": "#/$defs/IExtensionProperties"
+                }
+            },
+            "required": ["type", "url"]
+        },
+        "IDataSource": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/IElementTwinToObjectMappingDataSource"
+                },
+                {
+                    "$ref": "#/$defs/ICustomProperty"
+                }
+            ]
+        },
+        "IBehavior": {
+            "type": "object",
+            "description": "A behavior applies visual or interactive representations of twin state to objects in the scene",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "twinAliases": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string",
+                        "description": "Twin aliases present on this behavior"
+                    }
+                },
+                "datasources": {
+                    "type": "array",
+                    "description": "Data sources return an array of objects.  Each object is expected to have the same schema.  These objects can then be mapped over in visuals.",
+                    "items": {
+                        "$ref": "#/$defs/IDataSource"
+                    }
+                },
+                "visuals": {
+                    "type": "array",
+                    "description": "Visuals take a datasource, and modify objects in the scene based on expressions.  They allow you to color objects based on their state, float badges under alert conditions and configure popovers that trigger with user interaction",
+                    "items": {
+                        "$ref": "#/$defs/IVisual"
+                    }
+                }
+            },
+            "required": ["id", "displayName", "datasources", "visuals"]
+        },
+        "IVisual": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/IPopoverVisual"
+                },
+                {
+                    "$ref": "#/$defs/IExpressionRangeVisual"
+                }
+            ]
+        },
+        "ILayer": {
+            "type": "object",
+            "description": "Layers are used to group behavior visibility",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "behaviorIDs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "extensionProperties": {
+                    "$ref": "#/$defs/IExtensionProperties"
+                }
+            },
+            "required": ["id", "displayName", "behaviorIDs"]
+        },
+        "IPollingConfiguration": {
+            "type": "object",
+            "description": "Configures the parameters for the polling of twin data from the twin graph.",
+            "additionalProperties": false,
+            "properties": {
+                "minimumPollingFrequency": {
+                    "type": "number",
+                    "description": "The minimum time in milliseconds that data should be refreshed. NOTE: it may take longer than this to fetch the data so this is a floor value intended to limit the frequency when the consumer knows the data is not updated more often than a particular frequency."
+                }
+            },
+            "required": ["minimumPollingFrequency"]
+        },
+        "IExtensionProperties": {
+            "type": "object",
+            "description": "Optional bag of non-schematized extension properties"
+        },
+        "IGroupID": {
+            "type": "string",
+            "description": "Widget group to which a widget belongs"
+        },
+        "IValueExpression": {
+            "type": "string",
+            "description": "Expression which evaluates to a numeric value"
+        },
+        "IDTDLPropertyType": {
+            "type": "string",
+            "enum": [
+                "boolean",
+                "date",
+                "dateTime",
+                "double",
+                "duration",
+                "enum",
+                "float",
+                "integer",
+                "long",
+                "string",
+                "time"
+            ]
+        },
+        "IADXTimeSeriesConnection": {
+            "type": "object",
+            "description": "Azure Data Explorer connection information for time series data",
+            "additionalProperties": false,
+            "properties": {
+                "adxClusterUrl": {
+                    "type": "string"
+                },
+                "adxDatabaseName": {
+                    "type": "string"
+                },
+                "adxTableName": {
+                    "type": "string"
+                }
+            },
+            "required": ["adxClusterUrl", "adxDatabaseName", "adxTableName"]
+        },
+        "ITimeSeriesConnection": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/IADXTimeSeriesConnection"
+                }
+            ]
+        },
+        "IDataHistoryBasicTimeSeries": {
+            "type": "object",
+            "description": "A basic timeseries to be rendered in the chart of the data history widget",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "expression": {
+                    "type": "string"
+                },
+                "propertyType": {
+                    "$ref": "#/$defs/IDTDLPropertyType"
+                },
+                "unit": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                }
+            },
+            "required": ["id", "expression", "propertyType"]
+        },
+        "IDataHistoryTimeSeries": {
+            "type": "array",
+            "description": "A list of timeseries to render in the chart",
+            "items": {
+                "$ref": "#/$defs/IDataHistoryBasicTimeSeries"
+            }
+        },
+        "IDataHistoryChartYAxisType": {
+            "type": "string",
+            "enum": ["shared", "independent"]
+        },
+        "IDataHistoryAggregationType": {
+            "type": "string",
+            "enum": ["min", "max", "avg"]
+        },
+        "IDataHistoryChartOptions": {
+            "type": "object",
+            "description": "Options to be used while rendering chart for data history widget",
+            "additionalProperties": false,
+            "properties": {
+                "yAxisType": {
+                    "$ref": "#/$defs/IDataHistoryChartYAxisType"
+                },
+                "defaultQuickTimeSpanInMillis": {
+                    "type": "number"
+                },
+                "aggregationType": {
+                    "$ref": "#/$defs/IDataHistoryAggregationType"
+                },
+                "extensionProperties": {
+                    "$ref": "#/$defs/IExtensionProperties"
+                }
+            },
+            "required": [
+                "yAxisType",
+                "defaultQuickTimeSpanInMillis",
+                "aggregationType"
+            ]
+        },
+        "IObjectIDs": {
+            "type": "object",
+            "description": "objectIDs specify the objects in the scene that a visual pertains to",
+            "additionalProperties": false,
+            "properties": {
+                "expression": {
+                    "type": "string"
+                },
+                "extensionProperties": {
+                    "$ref": "#/$defs/IExtensionProperties"
+                }
+            },
+            "required": ["expression"]
+        },
+        "INumericOrInfinityType": {
+            "anyOf": [
+                {
+                    "type": "number"
+                },
+                {
+                    "const": "Infinity"
+                },
+                {
+                    "const": "-Infinity"
+                }
+            ]
+        },
+        "ICustomProperty": {
+            "type": "object",
+            "description": "Free form property",
+            "properties": {
+                "type": {
+                    "const": "CustomProperty"
+                }
+            },
+            "required": ["type"]
+        },
+        "ITwinToObjectMapping": {
+            "type": "object",
+            "description": "An elements maps twins to objects in the scene",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "const": "TwinToObjectMapping"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "primaryTwinID": {
+                    "type": "string",
+                    "description": "The twin referenced by this element"
+                },
+                "objectIDs": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "description": "Array of of object IDs in the scene",
+                    "items": {
+                        "type": "string",
+                        "description": "An object ID represents 3D meshes in the scene"
+                    }
+                },
+                "twinAliases": {
+                    "type": "object",
+                    "description": "Links to relevant twins other than the primary primaryTwin.  These aliases can be referenced in behavior expressions.",
+                    "additionalProperties": {
+                        "type": "string"
+                    }
+                },
+                "extensionProperties": {
+                    "$ref": "#/$defs/IExtensionProperties"
+                }
+            },
+            "required": [
+                "type",
+                "id",
+                "displayName",
+                "primaryTwinID",
+                "objectIDs"
+            ]
+        },
+        "IElementTwinToObjectMappingDataSource": {
+            "type": "object",
+            "description": "These datasources get their objects from the elements defined in a scene",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "const": "ElementTwinToObjectMappingDataSource"
+                },
+                "elementIDs": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                        "type": "string",
+                        "description": "An element ID contained in this data source"
+                    }
+                },
+                "extensionProperties": {
+                    "$ref": "#/$defs/IExtensionProperties"
+                }
+            },
+            "required": ["type", "elementIDs"]
+        },
+        "IGaugeWidgetConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Widget configuration specifies widget specific properties that are used for rendering this gauge",
+            "properties": {
+                "units": {
+                    "type": "string"
+                },
+                "label": {
+                    "type": "string"
+                },
+                "valueRanges": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/IValueRange"
+                    }
+                }
+            },
+            "required": ["label", "valueRanges"]
+        },
+        "ILinkWidgetConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Widget configuration specifies widget specific properties that are used for rendering this link",
+            "properties": {
+                "label": {
+                    "type": "string"
+                },
+                "linkExpression": {
+                    "type": "string",
+                    "description": "Template string which evalues to http link"
+                }
+            },
+            "required": ["label", "linkExpression"]
+        },
+        "IValueWidgetConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Widget configuration specifies widget specific properties that are used for rendering this value",
+            "properties": {
+                "displayName": {
+                    "type": "string"
+                },
+                "valueExpression": {
+                    "$ref": "#/$defs/IValueExpression"
+                },
+                "type": {
+                    "$ref": "#/$defs/IDTDLPropertyType"
+                }
+            },
+            "required": ["displayName", "valueExpression", "type"]
+        },
+        "IDataHistoryWidgetConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Widget configuration specifies widget specific properties that are used for rendering this data history",
+            "properties": {
+                "connection": {
+                    "description": "Database connection information of timeseries data",
+                    "$ref": "#/$defs/ITimeSeriesConnection"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "timeSeries": { "$ref": "#/$defs/IDataHistoryTimeSeries" },
+                "chartOptions": {
+                    "$ref": "#/$defs/IDataHistoryChartOptions"
+                }
+            },
+            "required": [
+                "connection",
+                "displayName",
+                "timeSeries",
+                "chartOptions"
+            ]
+        },
+        "IGaugeWidget": {
+            "type": "object",
+            "description": "A gauge widget",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "const": "Gauge"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "groupID": {
+                    "$ref": "#/$defs/IGroupID"
+                },
+                "valueExpression": {
+                    "$ref": "#/$defs/IValueExpression"
+                },
+                "widgetConfiguration": {
+                    "$ref": "#/$defs/IGaugeWidgetConfiguration"
+                },
+                "extensionProperties": {
+                    "$ref": "#/$defs/IExtensionProperties"
+                }
+            },
+            "required": ["type", "id", "valueExpression", "widgetConfiguration"]
+        },
+        "ILinkWidget": {
+            "type": "object",
+            "description": "A link widget which uses a string template to create a parametrized link",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "const": "Link"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "groupID": {
+                    "$ref": "#/$defs/IGroupID"
+                },
+                "widgetConfiguration": {
+                    "$ref": "#/$defs/ILinkWidgetConfiguration"
+                },
+                "extensionProperties": {
+                    "$ref": "#/$defs/IExtensionProperties"
+                }
+            },
+            "required": ["type", "id", "widgetConfiguration"]
+        },
+        "IValueWidget": {
+            "type": "object",
+            "description": "A value widget which uses display name and value",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "const": "Value"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "groupID": {
+                    "$ref": "#/$defs/IGroupID"
+                },
+                "widgetConfiguration": {
+                    "$ref": "#/$defs/IValueWidgetConfiguration"
+                },
+                "extensionProperties": {
+                    "$ref": "#/$defs/IExtensionProperties"
+                }
+            },
+            "required": ["type", "id", "widgetConfiguration"]
+        },
+        "IDataHistoryWidget": {
+            "type": "object",
+            "description": "A data history widget which uses twin properties to show timeseries data",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "const": "Data history"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "groupID": {
+                    "$ref": "#/$defs/IGroupID"
+                },
+                "widgetConfiguration": {
+                    "$ref": "#/$defs/IDataHistoryWidgetConfiguration"
+                },
+                "extensionProperties": {
+                    "$ref": "#/$defs/IExtensionProperties"
+                }
+            },
+            "required": ["type", "id", "widgetConfiguration"]
+        },
+        "IWidget": {
+            "anyOf": [
+                {
+                    "$ref": "#/$defs/IGaugeWidget"
+                },
+                {
+                    "$ref": "#/$defs/ILinkWidget"
+                },
+                {
+                    "$ref": "#/$defs/IValueWidget"
+                },
+                {
+                    "$ref": "#/$defs/IDataHistoryWidget"
+                },
+                {
+                    "$ref": "#/$defs/IPowerBIWidget"
+                }
+            ]
+        },
+        "IPowerBIWidget": {
+            "type": "object",
+            "description": "A widget to connect to Power BI and display a specified visualization",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "const": "PowerBI"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "widgetConfiguration": {
+                    "$ref": "#/$defs/IPowerBIWidgetConfiguration"
+                },
+                "extensionProperties": {
+                    "$ref": "#/$defs/IExtensionProperties"
+                }
+            },
+            "required": ["type", "id", "widgetConfiguration"]
+        },
+        "IPowerBIWidgetConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Widget configuration for required Power BI properties used to render visualization",
+            "properties": {
+                "type": {
+                    "description": "Supported types: report, dashboard, tile, visual",
+                    "type": "string",
+                    "enum": ["Tile", "Visual"]
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "embedUrl": {
+                    "type": "string",
+                    "description": "The URL of the report that contains the visual that you're embedding. This URL becomes the source of the HTML iframe element that contains the embedded visual. Specifically, the API assigns the URL to the src attribute of the iframe. Similar to \"https://app.powerbi.com/reportEmbed?reportId=<report ID>&groupId=<group ID>\" or \"https://app.powerbi.com/groups/<group ID>/reports/<report ID>\""
+                },
+                "pageName": {
+                    "type": "string",
+                    "description": "The name of the page that contains the visual that you're embedding"
+                },
+                "visualName": {
+                    "type": "string"
+                },
+                "dataFilterExpression": {
+                    "type": "string",
+                    "description": "Template string which evalues to data filter"
+                }
+            },
+            "required": ["type", "label", "reportId"]
+        },
+        "IPopoverVisual": {
+            "type": "object",
+            "description": "A popover displays information about a datasource when you click on any of the associated objectIDs",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "const": "Popover"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "widgets": {
+                    "type": "array",
+                    "description": "Widgets are visuals within a popover.  Widgets can be grouped via widgetGroups property.",
+                    "items": {
+                        "$ref": "#/$defs/IWidget"
+                    }
+                },
+                "widgetGroups": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "description": "Defines a widget group, referenced by ID in widgets",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "orientation": {
+                                "type": "string"
+                            }
+                        },
+                        "required": ["id"]
+                    }
+                },
+                "objectIDs": {
+                    "$ref": "#/$defs/IObjectIDs"
+                }
+            },
+            "required": ["type", "title", "widgets", "objectIDs"]
+        },
+        "IExpressionRangeType": {
+            "type": "string",
+            "enum": ["NumericRange", "CategoricalValues"]
+        },
+        "IExpressionRangeVisual": {
+            "type": "object",
+            "description": "An expression range visual maps an expression result to a visual",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "const": "ExpressionRangeVisual"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "displayName": {
+                    "type": "string"
+                },
+                "valueExpression": {
+                    "type": "string",
+                    "description": "Expression to evaluate"
+                },
+                "expressionType": {
+                    "$ref": "#/$defs/IExpressionRangeType"
+                },
+                "valueRanges": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/IValueRange"
+                    }
+                },
+                "valueRangeType": {
+                    "$ref": "#/$defs/IDTDLPropertyType"
+                },
+                "objectIDs": {
+                    "$ref": "#/$defs/IObjectIDs"
+                },
+                "extensionProperties": {
+                    "$ref": "#/$defs/IExtensionProperties"
+                }
+            },
+            "required": [
+                "type",
+                "valueExpression",
+                "expressionType",
+                "valueRanges",
+                "objectIDs"
+            ]
+        },
+        "IValueRange": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Range of values for which a visual indication is triggered",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ValueRangeValueType"
+                    },
+                    "description": "min/max values are parsed as a two element array [min, max].  Boolean values are parsed as a single element array [true]. String values are parsed as regular arrays [string1, string2, string3]"
+                },
+                "visual": {
+                    "$ref": "#/$defs/IValueRangeVisual"
+                },
+                "extensionProperties": {
+                    "$ref": "#/$defs/IExtensionProperties"
+                }
+            },
+            "required": ["id", "values", "visual"]
+        },
+        "ValueRangeValueType": {
+            "anyOf": [
+                {
+                    "type": "number"
+                },
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "boolean"
+                }
+            ]
+        },
+        "IValueRangeVisual": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "Visual data to apply when values are in range",
+            "properties": {
+                "color": {
+                    "type": "string"
+                },
+                "iconName": {
+                    "type": "string"
+                },
+                "labelExpression": {
+                    "type": "string"
+                },
+                "extensionProperties": {
+                    "$ref": "#/$defs/IExtensionProperties"
+                }
+            },
+            "required": []
+        }
+    }
+}

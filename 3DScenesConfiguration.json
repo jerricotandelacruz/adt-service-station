@@ -1,0 +1,688 @@
+{
+    "$schema": "https://github.com/microsoft/iot-cardboard-js/tree/main/schemas/3DScenesConfiguration/v1.0.0/3DScenesConfiguration.schema.json",
+    "configuration": {
+        "scenes": [{
+            "id": "32ab016e5bef408e801fddd9ab95291d",
+            "displayName": "ToTheMoon",
+            "description": "",
+            "elements": [{
+                "type": "TwinToObjectMapping",
+                "id": "d98540d215e64abf8cb77b4fce1411d6",
+                "displayName": "Tank01",
+                "primaryTwinID": "Tank01",
+                "objectIDs": ["Tank01"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "216a872697614000b7121775917bd105",
+                "displayName": "Tank02",
+                "primaryTwinID": "Tank02",
+                "objectIDs": ["Tank02"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "4680f89cd65146fb91e2003267f366e9",
+                "displayName": "Tank03",
+                "primaryTwinID": "Tank03",
+                "objectIDs": ["Tank03"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "593d3479298a46f79988ea505822bad8",
+                "displayName": "Tank04",
+                "primaryTwinID": "Tank04",
+                "objectIDs": ["Tank04"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "8327a5faaf2f49ef9c0fc5bf63fcb019",
+                "displayName": "Dispenser01",
+                "primaryTwinID": "Dispenser01",
+                "objectIDs": ["Dispenser01_primitive0", "Dispenser01_primitive1", "Dispenser01_primitive2", "Dispenser01_primitive3", "Dispenser01_primitive4"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "5c6cbb3869c146b19b00e311d29285d5",
+                "displayName": "Dispenser02",
+                "primaryTwinID": "Dispenser02",
+                "objectIDs": ["Dispenser02_primitive0", "Dispenser02_primitive1", "Dispenser02_primitive2", "Dispenser02_primitive3", "Dispenser02_primitive4"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "9c7b8d630e69459c96f69b5541519954",
+                "displayName": "Dispenser03",
+                "primaryTwinID": "Dispenser03",
+                "objectIDs": ["Dispenser03_primitive0", "Dispenser03_primitive1", "Dispenser03_primitive2", "Dispenser03_primitive3", "Dispenser03_primitive4"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "3b959f6520e443bc8332f58adf57339c",
+                "displayName": "Dispenser04",
+                "primaryTwinID": "Dispenser04",
+                "objectIDs": ["Dispenser04_primitive0", "Dispenser04_primitive1", "Dispenser04_primitive2", "Dispenser04_primitive3", "Dispenser04_primitive4"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "e28c1e1e56e24b7dbdbae3df74f8732c",
+                "displayName": "Dispenser05",
+                "primaryTwinID": "Dispenser05",
+                "objectIDs": ["Dispenser05_primitive0", "Dispenser05_primitive1", "Dispenser05_primitive2", "Dispenser05_primitive3", "Dispenser05_primitive4"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "12f6f0bfed964fdd92b8eb2574c93880",
+                "displayName": "Dispenser06",
+                "primaryTwinID": "Dispenser06",
+                "objectIDs": ["Dispenser06_primitive0", "Dispenser06_primitive1", "Dispenser06_primitive2", "Dispenser06_primitive3", "Dispenser06_primitive4"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "749d7afb2bed453d88b98585d13fd3f6",
+                "displayName": "Pump0608",
+                "primaryTwinID": "Pump0608",
+                "objectIDs": ["Pump0608_primitive0", "Pump0608_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "8c4c1b382b394020baa9dcdd1a70c05e",
+                "displayName": "Pump0607",
+                "primaryTwinID": "Pump0607",
+                "objectIDs": ["Pump0607_primitive0", "Pump0607_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "112294c853e648f4b0d02311c859963f",
+                "displayName": "Pump0606",
+                "primaryTwinID": "Pump0606",
+                "objectIDs": ["Pump0606_primitive0", "Pump0606_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "7b02385c9fb14385a7a8787fc738f14e",
+                "displayName": "Pump0605",
+                "primaryTwinID": "Pump0605",
+                "objectIDs": ["Pump0605_primitive0", "Pump0605_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "ad1829fda4144a2aac6816b9065ecf12",
+                "displayName": "Pump0604",
+                "primaryTwinID": "Pump0604",
+                "objectIDs": ["Pump0604_primitive0", "Pump0604_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "71808262c0a740b1972519d5f74e0da2",
+                "displayName": "Pump0603",
+                "primaryTwinID": "Pump0603",
+                "objectIDs": ["Pump0603_primitive0", "Pump0603_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "6e7d41f45e114640a0d6858f94adb894",
+                "displayName": "Pump0101",
+                "primaryTwinID": "Pump0101",
+                "objectIDs": ["Pump0101_primitive0", "Pump0101_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "0e791e850baf48e3a0894ccf8783b21a",
+                "displayName": "Pump0102",
+                "primaryTwinID": "Pump0102",
+                "objectIDs": ["Pump0102_primitive0", "Pump0102_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "08e096a45d9740529ff5954cca5b4893",
+                "displayName": "Pump0103",
+                "primaryTwinID": "Pump0103",
+                "objectIDs": ["Pump0103_primitive0", "Pump0103_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "350efc7f2ebc433b8d03725bb7455a37",
+                "displayName": "Pump0104",
+                "primaryTwinID": "Pump0104",
+                "objectIDs": ["Pump0104_primitive0", "Pump0104_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "04d3fa3dc48f4125ba9ae045cce12e62",
+                "displayName": "Pump0105",
+                "primaryTwinID": "Pump0105",
+                "objectIDs": ["Pump0105_primitive0", "Pump0105_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "6b154a8fc8ef417d8ad9718aba926894",
+                "displayName": "Pump0106",
+                "primaryTwinID": "Pump0106",
+                "objectIDs": ["Pump0106_primitive0", "Pump0106_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "2c69a4f2d51640ae8dc5dfd898f50881",
+                "displayName": "Pump0107",
+                "primaryTwinID": "Pump0107",
+                "objectIDs": ["Pump0107_primitive0", "Pump0107_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "9a675ff188fc4f2a8a22d11bdbcfcfaa",
+                "displayName": "Pump0108",
+                "primaryTwinID": "Pump0108",
+                "objectIDs": ["Pump0108_primitive0", "Pump0108_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "1e67815146e8456781d5f75c85f9d838",
+                "displayName": "Pump0201",
+                "primaryTwinID": "Pump0201",
+                "objectIDs": ["Pump0201_primitive0", "Pump0201_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "5f46f2d543d24f208dd6252c56a92d87",
+                "displayName": "Pump0202",
+                "primaryTwinID": "Pump0202",
+                "objectIDs": ["Pump0202_primitive0", "Pump0202_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "4cdf72da870f4dcd9c6b706b674a57a8",
+                "displayName": "Pump0203",
+                "primaryTwinID": "Pump0203",
+                "objectIDs": ["Pump0203_primitive0", "Pump0203_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "c6baa7195f0946e3b5bc4a1ec70161a0",
+                "displayName": "Pump0204",
+                "primaryTwinID": "Pump0204",
+                "objectIDs": ["Pump0204_primitive0", "Pump0204_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "d5948898c2c94c52b92b5ec933eacbee",
+                "displayName": "Pump0206",
+                "primaryTwinID": "Pump0206",
+                "objectIDs": ["Pump0206_primitive0", "Pump0206_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "ce38aba0aaf94ab088437149def97c2c",
+                "displayName": "Pump0205",
+                "primaryTwinID": "Pump0205",
+                "objectIDs": ["Pump0205_primitive0", "Pump0205_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "27527160e92d4307a5fb74aee755ceda",
+                "displayName": "Pump0207",
+                "primaryTwinID": "Pump0207",
+                "objectIDs": ["Pump0207_primitive0", "Pump0207_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "0e77052c1ecc414a9df4ee158cdd7cd4",
+                "displayName": "Pump0208",
+                "primaryTwinID": "Pump0208",
+                "objectIDs": ["Pump0208_primitive0", "Pump0208_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "91798338737a4afb98bd682036043ced",
+                "displayName": "Pump0301",
+                "primaryTwinID": "Pump0301",
+                "objectIDs": ["Pump0301_primitive0", "Pump0301_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "e9b4ed4d75924994b7510ba5ed6b77f0",
+                "displayName": "Pump0302",
+                "primaryTwinID": "Pump0302",
+                "objectIDs": ["Pump0302_primitive0", "Pump0302_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "95c88a3cd63b44eab0daa2014669c532",
+                "displayName": "Pump0303",
+                "primaryTwinID": "Pump0303",
+                "objectIDs": ["Pump0303_primitive0", "Pump0303_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "3d2c9739adce40fda2779a644f35632f",
+                "displayName": "Pump0304",
+                "primaryTwinID": "Pump0304",
+                "objectIDs": ["Pump0304_primitive0", "Pump0304_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "145ba8989ffc4e6495fdf3aa8cbeb740",
+                "displayName": "Pump0306",
+                "primaryTwinID": "Pump0306",
+                "objectIDs": ["Pump0306_primitive0", "Pump0306_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "34eebd6463c64d59ad374fca70bf37cb",
+                "displayName": "Pump0305",
+                "primaryTwinID": "Pump0305",
+                "objectIDs": ["Pump0305_primitive0", "Pump0305_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "9fe84142ea67486283dc79c8b08a1ba1",
+                "displayName": "Pump0307",
+                "primaryTwinID": "Pump0307",
+                "objectIDs": ["Pump0307_primitive0", "Pump0307_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "f2263b7e46ac4203bd2fb9c16c4fe780",
+                "displayName": "Pump0308",
+                "primaryTwinID": "Pump0308",
+                "objectIDs": ["Pump0308_primitive0", "Pump0308_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "25abfc2d561e4e8b86483cae01881577",
+                "displayName": "Pump0401",
+                "primaryTwinID": "Pump0401",
+                "objectIDs": ["Pump0401_primitive0", "Pump0401_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "156d1c81ad424366b426d5113aec3deb",
+                "displayName": "Pump0402",
+                "primaryTwinID": "Pump0402",
+                "objectIDs": ["Pump0402_primitive0", "Pump0402_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "2b5488348a7a42dfbfb2ebc0689cf605",
+                "displayName": "Pump0403",
+                "primaryTwinID": "Pump0403",
+                "objectIDs": ["Pump0403_primitive0", "Pump0403_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "41fb593a79564c738aca7ad8e94d2ed2",
+                "displayName": "Pump0404",
+                "primaryTwinID": "Pump0404",
+                "objectIDs": ["Pump0404_primitive0", "Pump0404_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "67f062cb342e45cf8fab0df00e248795",
+                "displayName": "Pump0405",
+                "primaryTwinID": "Pump0405",
+                "objectIDs": ["Pump0405_primitive0", "Pump0405_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "2fa42e8238f04410811d4962d6078d4b",
+                "displayName": "Pump0406",
+                "primaryTwinID": "Pump0406",
+                "objectIDs": ["Pump0406_primitive0", "Pump0406_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "9112170dbf424aa0814980dba6539b1a",
+                "displayName": "Pump0407",
+                "primaryTwinID": "Pump0407",
+                "objectIDs": ["Pump0407_primitive0", "Pump0407_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "92bd2cf055474bac954bb812bfda1b4c",
+                "displayName": "Pump0408",
+                "primaryTwinID": "Pump0408",
+                "objectIDs": ["Pump0408_primitive0", "Pump0408_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "ea7354155a4040949cbbf4db6f5c9bac",
+                "displayName": "Pump0501",
+                "primaryTwinID": "Pump0501",
+                "objectIDs": ["Pump0501_primitive0", "Pump0501_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "d0f2a5de17df4192a0f3699371874c6c",
+                "displayName": "Pump0502",
+                "primaryTwinID": "Pump0502",
+                "objectIDs": ["Pump0502_primitive0", "Pump0502_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "5189efc14f3f4e8e850ef7a1b9b45f12",
+                "displayName": "Pump0503",
+                "primaryTwinID": "Pump0503",
+                "objectIDs": ["Pump0503_primitive0", "Pump0503_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "ed5eb4937c6147e992cf0e4a33270e78",
+                "displayName": "Pump0504",
+                "primaryTwinID": "Pump0504",
+                "objectIDs": ["Pump0504_primitive0", "Pump0504_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "994c873fd2744eaf82b3f59fca0106cc",
+                "displayName": "Pump0505",
+                "primaryTwinID": "Pump0505",
+                "objectIDs": ["Pump0505_primitive0", "Pump0505_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "3d8544b4991342829f55eb29fb2f8260",
+                "displayName": "Pump0506",
+                "primaryTwinID": "Pump0506",
+                "objectIDs": ["Pump0506_primitive0", "Pump0506_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "d0a53f78e902448383b63e911f040f0c",
+                "displayName": "Pump0507",
+                "primaryTwinID": "Pump0507",
+                "objectIDs": ["Pump0507_primitive0", "Pump0507_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "b981b4b0e8ec4341b1af1675cb50827c",
+                "displayName": "Pump0508",
+                "primaryTwinID": "Pump0508",
+                "objectIDs": ["Pump0508_primitive0", "Pump0508_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "132a141612f34bec8f4974dce7b27f03",
+                "displayName": "Pump0601",
+                "primaryTwinID": "Pump0601",
+                "objectIDs": ["Pump0601_primitive0", "Pump0601_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "998214a6b6084d488ea4d3e496ca8765",
+                "displayName": "Pump0602",
+                "primaryTwinID": "Pump0602",
+                "objectIDs": ["Pump0602_primitive0", "Pump0602_primitive1"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "9a8c7936d4934a3ab5ff9d6533e41341",
+                "displayName": "FillPipe01",
+                "primaryTwinID": "FillPipe01",
+                "objectIDs": ["FillPipe01"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "88e51a3e13b740108ab443ae1251353f",
+                "displayName": "FillPipe02",
+                "primaryTwinID": "FillPipe02",
+                "objectIDs": ["FillPipe02"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "f78927d9d95d4231882ec77c075c5cc4",
+                "displayName": "FillPipe03",
+                "primaryTwinID": "FillPipe03",
+                "objectIDs": ["FillPipe03"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "b5a0333d77da4c21aee62b7922355e21",
+                "displayName": "FillPipe04",
+                "primaryTwinID": "FillPipe04",
+                "objectIDs": ["FillPipe04"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "0fb367db65a541fb9ba52a00a71dbae2",
+                "displayName": "ProductPipe04",
+                "primaryTwinID": "ProductPipe04",
+                "objectIDs": ["ProductPipe04"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "23dbe8e4954c4146a3edaf1f95faafa8",
+                "displayName": "ProductPipe03",
+                "primaryTwinID": "ProductPipe03",
+                "objectIDs": ["ProductPipe03"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "05bf88472e2c4841ad6e3bc97bd2ed95",
+                "displayName": "ProductPipe02",
+                "primaryTwinID": "ProductPipe02",
+                "objectIDs": ["ProductPipe02"]
+            }, {
+                "type": "TwinToObjectMapping",
+                "id": "89e020c96ff34cc5ac5704195f28271b",
+                "displayName": "ProductPipe01",
+                "primaryTwinID": "ProductPipe01",
+                "objectIDs": ["ProductPipe01"]
+            }],
+            "behaviorIDs": ["1df8ced641f24ffba725e193a61b7b1c", "cf505591e08b4d129fb62e893d2a3813", "0a678719f52840e3b7d0a17505fa9147", "c6449ade540a4b3fbd05732be1d58d92"],
+            "assets": [{
+                "type": "3DAsset",
+                "url": "https://adtpocstorageaccount.blob.core.windows.net/ttmdigitaltwinscontainer/tothemoon.glb"
+            }]
+        }],
+        "behaviors": [{
+            "id": "1df8ced641f24ffba725e193a61b7b1c",
+            "displayName": "Fill Level",
+            "datasources": [{
+                "type": "ElementTwinToObjectMappingDataSource",
+                "elementIDs": ["d98540d215e64abf8cb77b4fce1411d6", "216a872697614000b7121775917bd105", "4680f89cd65146fb91e2003267f366e9", "593d3479298a46f79988ea505822bad8"]
+            }],
+            "visuals": [{
+                "id": "d417dc36da244cb3afd3bfc125526d21",
+                "type": "ExpressionRangeVisual",
+                "valueExpression": "PrimaryTwin.fillLevel",
+                "valueRanges": [{
+                    "id": "a7690a1447074c08aea9acd883c04fbe",
+                    "values": [0, 30],
+                    "visual": {
+                        "color": "#C32F27",
+                        "labelExpression": "Low"
+                    }
+                }, {
+                    "id": "9c13713f9fbe46e2ac59067dd799766a",
+                    "values": [31, 70],
+                    "visual": {
+                        "color": "#F79824",
+                        "labelExpression": "Mid"
+                    }
+                }, {
+                    "id": "3ab6a6f8f0ce4c9b98114c38461ed2c1",
+                    "values": [71, 100],
+                    "visual": {
+                        "color": "#26C485",
+                        "labelExpression": "High"
+                    }
+                }],
+                "expressionType": "NumericRange",
+                "objectIDs": {
+                    "expression": "objectIDs"
+                },
+                "displayName": "Fill Level Status",
+                "valueRangeType": "integer"
+            }, {
+                "type": "Popover",
+                "title": "",
+                "widgets": [{
+                    "id": "ae11aade62b24ad487024b83e7d90320",
+                    "type": "Value",
+                    "widgetConfiguration": {
+                        "displayName": "Temperature",
+                        "valueExpression": "PrimaryTwin.temperature",
+                        "type": "double"
+                    }
+                }, {
+                    "id": "f32955662fec4bc480a7d4ed9e795668",
+                    "type": "Gauge",
+                    "valueExpression": "PrimaryTwin.waterLevel",
+                    "widgetConfiguration": {
+                        "label": "Water Level",
+                        "valueRanges": [{
+                            "values": [0, 85],
+                            "visual": {
+                                "color": "#C32F27"
+                            },
+                            "id": "d36f6caa87584d6a8d77f932033ba60a"
+                        }, {
+                            "values": [85, 90],
+                            "visual": {
+                                "color": "#F79824"
+                            },
+                            "id": "879e7452a7b044d7ae6a0a9782e373d8"
+                        }, {
+                            "values": [90, 100],
+                            "visual": {
+                                "color": "#26C485"
+                            },
+                            "id": "e2dc80765fe5439fb08e33dae622ee1a"
+                        }],
+                        "units": "%"
+                    }
+                }, {
+                    "id": "4401a0b28bde4630acc92f8068a5d868",
+                    "type": "Gauge",
+                    "valueExpression": "PrimaryTwin.pressureLevel",
+                    "widgetConfiguration": {
+                        "label": "Pressure Level",
+                        "valueRanges": [{
+                            "values": [0, 30],
+                            "visual": {
+                                "color": "#26C485"
+                            },
+                            "id": "18a962ffff8643d2962e9ab4904aee32"
+                        }, {
+                            "values": [30, 70],
+                            "visual": {
+                                "color": "#F79824"
+                            },
+                            "id": "5ff121b9ac4e4a2c8cc8b16d959c2e77"
+                        }, {
+                            "values": [70, 100],
+                            "visual": {
+                                "color": "#C32F27"
+                            },
+                            "id": "c2ee8e9c82d446cdb216232902ecddf9"
+                        }],
+                        "units": "%"
+                    }
+                }],
+                "objectIDs": {
+                    "expression": "meshIDs"
+                }
+            }]
+        }, {
+            "id": "cf505591e08b4d129fb62e893d2a3813",
+            "displayName": "Pipe Status",
+            "datasources": [{
+                "type": "ElementTwinToObjectMappingDataSource",
+                "elementIDs": ["9a8c7936d4934a3ab5ff9d6533e41341", "88e51a3e13b740108ab443ae1251353f", "f78927d9d95d4231882ec77c075c5cc4", "b5a0333d77da4c21aee62b7922355e21", "0fb367db65a541fb9ba52a00a71dbae2", "23dbe8e4954c4146a3edaf1f95faafa8", "05bf88472e2c4841ad6e3bc97bd2ed95", "89e020c96ff34cc5ac5704195f28271b"]
+            }],
+            "visuals": [{
+                "id": "e4c37c50a692445e9cb3df7ee77f8d83",
+                "type": "ExpressionRangeVisual",
+                "valueExpression": "PrimaryTwin.leakTest == 2",
+                "valueRanges": [{
+                    "id": "2a0ba7f20d0644f7becb138d7c83322b",
+                    "values": [true],
+                    "visual": {
+                        "color": "#C32F27",
+                        "iconName": "Warning",
+                        "labelExpression": "Leaking"
+                    }
+                }, {
+                    "id": "e92e5115469843eeb01341d288d103b1",
+                    "values": [false],
+                    "visual": {
+                        "color": "#26C485",
+                        "labelExpression": "Good",
+                        "iconName": "Accept"
+                    }
+                }],
+                "expressionType": "CategoricalValues",
+                "objectIDs": {
+                    "expression": "objectIDs"
+                },
+                "displayName": "Status",
+                "valueRangeType": "boolean"
+            }, {
+                "type": "Popover",
+                "title": "",
+                "widgets": [{
+                    "id": "b98335c43a5e42acb826a8d7475f20d4",
+                    "type": "Value",
+                    "widgetConfiguration": {
+                        "displayName": "Last Leak Test",
+                        "valueExpression": "PrimaryTwin.lastLeakTest",
+                        "type": "dateTime"
+                    }
+                }],
+                "objectIDs": {
+                    "expression": "meshIDs"
+                }
+            }, {
+                "id": "d6be216719524342ab77f005d0b32abd",
+                "type": "ExpressionRangeVisual",
+                "valueExpression": "PrimaryTwin.leakTest == 2",
+                "valueRanges": [{
+                    "id": "d1520a34a1aa4f87b0b535b3fdad05e9",
+                    "values": [true],
+                    "visual": {
+                        "color": "#C32F27",
+                        "labelExpression": "Leaking"
+                    }
+                }, {
+                    "id": "6d42660070ff4287b82f806bc3bbdd09",
+                    "values": [false],
+                    "visual": {
+                        "color": "#26C485",
+                        "labelExpression": "Good"
+                    }
+                }],
+                "expressionType": "CategoricalValues",
+                "objectIDs": {
+                    "expression": "objectIDs"
+                },
+                "valueRangeType": "boolean",
+                "displayName": "Status"
+            }]
+        }, {
+            "id": "0a678719f52840e3b7d0a17505fa9147",
+            "displayName": "Dispenser",
+            "datasources": [{
+                "type": "ElementTwinToObjectMappingDataSource",
+                "elementIDs": ["8327a5faaf2f49ef9c0fc5bf63fcb019", "5c6cbb3869c146b19b00e311d29285d5", "9c7b8d630e69459c96f69b5541519954", "3b959f6520e443bc8332f58adf57339c", "e28c1e1e56e24b7dbdbae3df74f8732c", "12f6f0bfed964fdd92b8eb2574c93880"]
+            }],
+            "visuals": [{
+                "type": "Popover",
+                "title": "",
+                "widgets": [{
+                    "id": "4924733262644bbdaa1f2d275899537d",
+                    "type": "Value",
+                    "widgetConfiguration": {
+                        "displayName": "Sales Volume",
+                        "valueExpression": "PrimaryTwin.salesVolume+ \"kg\"",
+                        "type": "string"
+                    }
+                }, {
+                    "id": "f0a989c98cdf4ef59d40c8e3a06a883b",
+                    "type": "Value",
+                    "widgetConfiguration": {
+                        "displayName": "Total Sales",
+                        "valueExpression": "'$' + PrimaryTwin.totalSales",
+                        "type": "string"
+                    }
+                }],
+                "objectIDs": {
+                    "expression": "meshIDs"
+                }
+            }]
+        }, {
+            "id": "c6449ade540a4b3fbd05732be1d58d92",
+            "displayName": "Pump",
+            "datasources": [{
+                "type": "ElementTwinToObjectMappingDataSource",
+                "elementIDs": ["749d7afb2bed453d88b98585d13fd3f6", "8c4c1b382b394020baa9dcdd1a70c05e", "112294c853e648f4b0d02311c859963f", "7b02385c9fb14385a7a8787fc738f14e", "ad1829fda4144a2aac6816b9065ecf12", "71808262c0a740b1972519d5f74e0da2", "6e7d41f45e114640a0d6858f94adb894", "0e791e850baf48e3a0894ccf8783b21a", "08e096a45d9740529ff5954cca5b4893", "350efc7f2ebc433b8d03725bb7455a37", "04d3fa3dc48f4125ba9ae045cce12e62", "6b154a8fc8ef417d8ad9718aba926894", "2c69a4f2d51640ae8dc5dfd898f50881", "9a675ff188fc4f2a8a22d11bdbcfcfaa", "1e67815146e8456781d5f75c85f9d838", "5f46f2d543d24f208dd6252c56a92d87", "4cdf72da870f4dcd9c6b706b674a57a8", "c6baa7195f0946e3b5bc4a1ec70161a0", "d5948898c2c94c52b92b5ec933eacbee", "ce38aba0aaf94ab088437149def97c2c", "27527160e92d4307a5fb74aee755ceda", "0e77052c1ecc414a9df4ee158cdd7cd4", "91798338737a4afb98bd682036043ced", "e9b4ed4d75924994b7510ba5ed6b77f0", "95c88a3cd63b44eab0daa2014669c532", "3d2c9739adce40fda2779a644f35632f", "145ba8989ffc4e6495fdf3aa8cbeb740", "34eebd6463c64d59ad374fca70bf37cb", "9fe84142ea67486283dc79c8b08a1ba1", "f2263b7e46ac4203bd2fb9c16c4fe780", "25abfc2d561e4e8b86483cae01881577", "156d1c81ad424366b426d5113aec3deb", "2b5488348a7a42dfbfb2ebc0689cf605", "41fb593a79564c738aca7ad8e94d2ed2", "67f062cb342e45cf8fab0df00e248795", "2fa42e8238f04410811d4962d6078d4b", "9112170dbf424aa0814980dba6539b1a", "92bd2cf055474bac954bb812bfda1b4c", "ea7354155a4040949cbbf4db6f5c9bac", "d0f2a5de17df4192a0f3699371874c6c", "5189efc14f3f4e8e850ef7a1b9b45f12", "ed5eb4937c6147e992cf0e4a33270e78", "994c873fd2744eaf82b3f59fca0106cc", "3d8544b4991342829f55eb29fb2f8260", "d0a53f78e902448383b63e911f040f0c", "b981b4b0e8ec4341b1af1675cb50827c", "132a141612f34bec8f4974dce7b27f03", "998214a6b6084d488ea4d3e496ca8765"]
+            }],
+            "visuals": [{
+                "type": "Popover",
+                "title": "",
+                "widgets": [{
+                    "id": "58d82da9ea1844afa485a1263b72ecdb",
+                    "type": "Value",
+                    "widgetConfiguration": {
+                        "displayName": "Total Sales",
+                        "valueExpression": "'$' + PrimaryTwin.totalSales",
+                        "type": "string"
+                    }
+                }, {
+                    "id": "996c58e1c0e644e7acdb412acf89b848",
+                    "type": "Value",
+                    "widgetConfiguration": {
+                        "displayName": "Sales Volume",
+                        "valueExpression": "PrimaryTwin.salesVolume + \"kg\"",
+                        "type": "string"
+                    }
+                }],
+                "objectIDs": {
+                    "expression": "meshIDs"
+                }
+            }]
+        }],
+        "layers": [{
+            "id": "6a8480ff9a414040bf1c28845a54c3b5",
+            "behaviorIDs": ["1df8ced641f24ffba725e193a61b7b1c"],
+            "displayName": "Tanks"
+        }, {
+            "id": "0befe5793f114a14993535fec3eb1e88",
+            "behaviorIDs": ["0a678719f52840e3b7d0a17505fa9147"],
+            "displayName": "Dispensers"
+        }, {
+            "id": "95b6e9d82d2c4fcaa27f9cd97d2f7755",
+            "behaviorIDs": ["cf505591e08b4d129fb62e893d2a3813"],
+            "displayName": "Fill Pipes"
+        }, {
+            "id": "690caa3d7ded43acad4a51c9c4666121",
+            "behaviorIDs": ["cf505591e08b4d129fb62e893d2a3813"],
+            "displayName": "Pipes"
+        }, {
+            "id": "b6ae9be12fe74aa9b1d051cd26478152",
+            "behaviorIDs": ["cf505591e08b4d129fb62e893d2a3813"],
+            "displayName": "Product Pipes"
+        }, {
+            "id": "82e1b18e2120413b87d559fbd50f3edd",
+            "behaviorIDs": [],
+            "displayName": "Vent Pipes"
+        }, {
+            "id": "a96797d8d55d45ffae2711126fcbf43b",
+            "behaviorIDs": [],
+            "displayName": "Pumps"
+        }]
+    }
+}

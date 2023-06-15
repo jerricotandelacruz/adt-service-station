@@ -5,9 +5,19 @@
   "displayName": "Station",
   "contents": [
     {
+      "@type": "Property",
+      "name": "totalRevenue",
+      "schema": "double"
+    },
+    {
       "@type": "Relationship",
       "name": "rel_has_tanks",
       "target": "dtmi:tothemoon:Tank;1"
+    },
+    {
+      "@type": "Relationship",
+      "name": "rel_has_dispensers",
+      "target": "dtmi:tothemoon:Dispenser;1"
     }
   ]
 }
